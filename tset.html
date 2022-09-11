@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var btn = document.querySelector('.btn')
+            btn.addEventListener('click', function(){
+                btn.disabled = true;
+                setTimeout(function(){
+                    btn.disabled = false;
+                }, 60000)
+                //禁止该button,60s后可以重新点击
+
+                var t = 60;
+                btn.innerHTML = 're-click in ' + t +' sec'
+
+                setInterval(function(){
+                    btn.innerHTML = 're-click in ' + t +' sec'
+                    t--;
+                }, 1000)
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" class="input">
+    <button class="btn">submit</button>
+
+    
+</body>
+</html>
